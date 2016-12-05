@@ -1,10 +1,13 @@
 <div class="wrapper">
-  <div class="card-item" [ngClass]="{'flipped' : card.position === 1}" (click)="switchPosition()">
-    <div class="face front" [ngStyle]="{'background-image': 'url(' + card.frontImage + ')'}">      
-      {{ card.name }}
+  <div class="card-item" [ngClass]="{'flipped' : card.position === 1 || card.isFound}">
+    <div class="face front">      
+      <div class="front-wrapper">
+        <div class="front-container">
+           <i [class]="card.frontImage" aria-hidden="true"></i>
+        </div>
+      </div>
     </div>
     <div class="face back" [ngStyle]="{'background-image': 'url(' + card.backImage + ')'}">
-      {{ card.name }}
     </div>
   </div>
 </div>

@@ -10,13 +10,5 @@ import { CardPosition } from '../enums/card-position.enum';
 export class CardComponent {
   @Input() card: Card;
 
-  constructor() { }
-
-  switchPosition() {
-    if(this.card) {
-      this.card.position = this.card.position === CardPosition.Face ? CardPosition.Back : CardPosition.Face; 
-      
-    }
-  }
-
+  constructor() { }  
 }

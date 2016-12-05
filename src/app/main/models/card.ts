@@ -2,18 +2,21 @@ import { CardPosition } from '../enums/card-position.enum';
 
 export class Card {
     id: number;
+    pairId: number;
     position: CardPosition;
     first: boolean;
     name: string;
     frontImage: string;
     backImage: string;
+    isFound: boolean;
 
     constructor(id: number, first: boolean, frontImage: string) {
         this.id = id;
         this.first = first;
         this.frontImage = frontImage;
-        this.backImage = "assets/card-back.png";
+        this.backImage = "assets/metalic.jpg";
         this.name = `Card ${this.id}`;
         this.position = CardPosition.Back;
+        this.isFound = false;
     }
 }
