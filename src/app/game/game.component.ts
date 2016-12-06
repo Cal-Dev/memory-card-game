@@ -86,8 +86,20 @@ export class GameComponent implements OnInit {
               currentCards[1].position = CardPosition.Back;
             }
           }
+          this.checkAllCards();
           currentCards = null;
         });
+      }
+    }
+  }
+
+  checkAllCards() {
+    for(let card of this.cards) {
+      if(!card.isFound && card.position === CardPosition.Face) {
+        let pairCard = this.cards.find(x => x.pairId === card.pairId && x.id !== card.id);
+        if(pairCard && pairCard.position !== CardPosition.Face) {
+          card.position = CardPosition.Back;
+        }
       }
     }
   }
