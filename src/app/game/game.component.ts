@@ -5,11 +5,11 @@ import { Observable, } from "rxjs/Rx";
 import { Http, Response } from '@angular/http';
 
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  selector: 'game',
+  templateUrl: './game.component.html',
+  styleUrls: ['./game.component.scss']
 })
-export class MainComponent implements OnInit {
+export class GameComponent implements OnInit {
   cards: Card[];
   size: number;
   icons: string[];

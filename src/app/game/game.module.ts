@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MainComponent } from './main.component';
+import { GameComponent } from './game.component';
 import { CardComponent } from './card/card.component';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
@@ -12,14 +12,14 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   exports: [
-    MainComponent
+    GameComponent
   ],
   declarations: [
-    MainComponent,
+    GameComponent,
     CardComponent
   ],
   providers: [
     HttpModule
   ]
 })
-export class MainModule { }
+export class GameModule { }

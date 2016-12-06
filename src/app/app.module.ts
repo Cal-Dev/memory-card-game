@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { MainModule } from './main/main.module';
+import { GameModule } from './game/game.module';
+import { MemoryCardGameRoutingModule } from './app.routing.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { MainModule } from './main/main.module';
   imports: [
     BrowserModule,
     FormsModule,
-    MainModule
+    GameModule,
+    MemoryCardGameRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
