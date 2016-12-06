@@ -1,10 +1,19 @@
 <div class="row">
-  <div class="col-lg-6">
+  <div class="col-lg-2">
     <h2>Moves: {{moves}}</h2>
+    <button class="btn btn-primary" (click)="startNewGame()" style="width: 100%">Start new game</button>
+    <select [(ngModel)]="size" style="width: 100%"> 
+      <option *ngFor="let sizeObj of possibleSizes" [value]="sizeObj">
+        {{ sizeObj }}
+      </option>
+    </select>
+  </div>
+  <div class="col-lg-2 col-lg-offset-2" *ngIf="isGameCompleted()">
+    <h1>Win!!</h1>
   </div>
 </div>
 <div class="row" *ngIf="cards">
-  <div class="col-lg-2" *ngFor="let card of cards">
+  <div [class]="generateClass()" *ngFor="let card of cards">
     <card [card]="card" (click)="switchPosition(card)"></card>
   </div>
 </div>

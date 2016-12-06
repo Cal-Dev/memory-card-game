@@ -9,8 +9,9 @@ export class Card {
     frontImage: string;
     backImage: string;
     isFound: boolean;
+    color: string;
 
-    constructor(id: number, first: boolean, frontImage: string) {
+    constructor(id: number, first: boolean, frontImage: string, color: string) {
         this.id = id;
         this.first = first;
         this.frontImage = frontImage;
@@ -18,5 +19,6 @@ export class Card {
         this.name = `Card ${this.id}`;
         this.position = CardPosition.Back;
         this.isFound = false;
+        this.color = color;
     }
 }
