@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { GameModule } from './game/game.module';
 import { MemoryCardGameRoutingModule } from './app.routing.module';
+import { IndexComponent } from './index/index.component';
 
 @NgModule({
   declarations: [
-    AppComponent      
+    AppComponent,
+    IndexComponent      
   ],
   imports: [
     BrowserModule,

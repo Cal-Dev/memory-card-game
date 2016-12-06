@@ -1,18 +1,14 @@
-<div class="row">
-  <div class="col-lg-2">
-    <h2>Moves: {{moves}}</h2>
-    <button class="btn btn-primary" (click)="startNewGame()" style="width: 100%">Start new game</button>
-    <select [(ngModel)]="size" style="width: 100%"> 
-      <option *ngFor="let sizeObj of possibleSizes" [value]="sizeObj">
-        {{ sizeObj }}
-      </option>
-    </select>
-  </div>
-  <div class="col-lg-2 col-lg-offset-2" *ngIf="isGameCompleted()">
-    <h1>Win!!</h1>
-  </div>
+<div class="topWrap" *ngIf="dataLoaded() && !isGameCompleted()" style="overflow-y: hidden;">
+  <h3>Moves: {{moves}}</h3>
 </div>
-<div class="row" *ngIf="cards">
+
+<div class="resultWrap" *ngIf="isGameCompleted()" style="overflow-y: hidden;">
+  <h3>Congradulations, you won with only {{moves}} moves!!</h3>
+  <button class="myBtn" (click)="startNewGame()"><h2>RESTART GAME</h2></button>
+
+</div>
+
+<div class="row" *ngIf="cards && !isGameCompleted()" style="overflow-y: hidden;">
   <div [class]="generateClass()" *ngFor="let card of cards">
     <card [card]="card" (click)="switchPosition(card)"></card>
   </div>

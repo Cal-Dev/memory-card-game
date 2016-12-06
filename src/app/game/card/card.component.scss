@@ -1,6 +1,5 @@
 .wrapper {
-    perspective: 900;
-    width: 50%;
+    width: 200px;
     height: 200px;
     position: relative;
     margin: 20px auto;
@@ -33,21 +32,22 @@
     transform: rotatey(-180deg);
     background-size: 100%;
     cursor: pointer;
-    background-color: lightgray;
+    background-color: #ecf0f1;
     border-radius: 10px;
-    border: 2px outset white;
+    border: 2px outset #ecf0f1;
     //box-shadow: 30px 30px 25px lightgray;
 }
 
 .back {
     position: absolute;
     z-index: 1;
+    background-color: #2980b9;
     background-size:     cover;                    
     background-repeat:   no-repeat;
     background-position: center center;
     cursor: pointer;
     border-radius: 10px;    
-    border: 2px outset white;
+    border: 2px outset #2980b9;
     //box-shadow: 30px 30px 25px lightgray;
 }
 

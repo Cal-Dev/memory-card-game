@@ -17,6 +17,7 @@ export class GameComponent implements OnInit {
   colors: string[];
   possibleSizes: number[];
   cardBuffer: Card[];
+  gameStarted: boolean;
 
   constructor(private http: Http) { }
 
@@ -27,11 +28,22 @@ export class GameComponent implements OnInit {
     this.fillPossibleSizes();    
   }
 
+  dataLoaded(): boolean {
+    if(this.icons && this.icons.length > 0 && this.colors && this.colors.length > 0) {
+      if(!this.gameStarted) {
+        this.startNewGame();
+      }
+      return true;
+    }
+    return false;
+  }
+
   generateClass(): string {
     return `col-lg-${Math.round(12 / (Math.sqrt(this.size)))}`;
   }
 
   startNewGame() {
+    this.gameStarted = true;
     this.moves = 0;
     this.cardBuffer = new Array<Card>();
 
@@ -61,7 +73,7 @@ export class GameComponent implements OnInit {
       if (this.cardBuffer.length === 2) {
         let currentCards = this.cardBuffer;
         this.cardBuffer = new Array<Card>();
-        let timer = Observable.timer(800, 50);
+        let timer = Observable.timer(800, 80);
 
         let sub = timer.subscribe(t => {
           if (currentCards) {
